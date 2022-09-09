@@ -22,7 +22,7 @@ Obtain your access and secret keys
 $ python3 init.py
 ```
 
-Create a new remote repo on github/bitbuckeet
+Create a new remote repo on github/bitbucket
 ```
 $ git remote rm origin
 $ git remote add origin YOUR_NEW_REPO
@@ -32,5 +32,7 @@ $ git push
 
 Create a new pipeline: [![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
 
-Add your credentials to your buildkite agent.
+## Note:
+Please make sure to generate ssh key for your buildkite agent: [link](https://buildkite.com/docs/agent/v3/ssh-keys) and add your credentials to your buildkite agent as follows.
+
 Use `ASCEND_ACCESS_KEY` for your access key id and `ASCEND_SECRET_KEY` for your secret access key.
