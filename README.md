@@ -32,4 +32,5 @@ $ git push
 
 Create a new pipeline: [![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
 
-Add your credentials to your buildkite agent and you are done!
+Add your credentials to your buildkite agent.
+Use `ASCEND_ACCESS_KEY` for your access key id and `ASCEND_SECRET_KEY` for your secret access key.

@@ -6,6 +6,6 @@ steps:
           run: app
           propagate-environment: true
           environment:
-            - "envkey=<<replace_env>>"
+            - "hostname=<<replace_env>>"
             - ASCEND_ACCESS_KEY
             - ASCEND_SECRET_KEY
