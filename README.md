@@ -17,12 +17,16 @@ $ venv/bin/activate
 $ pip3 install -r requirements.txt
 ```
 
-Obtain your access and secret keys
+Obtain your access and secret keys from your Ascend environment.
+It can be found from your Profile tab
+
+![profile](ascend_access_keys.png)
+
 ```
 $ python3 init.py
 ```
 
-Create a new remote repo on github/bitbucket
+Create a new remote repo on github/bitbuckeet
 ```
 $ git remote rm origin
 $ git remote add origin YOUR_NEW_REPO
@@ -32,7 +36,5 @@ $ git push
 
 Create a new pipeline: [![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
 
-## Note:
-Please make sure to generate ssh key for your buildkite agent: [link](https://buildkite.com/docs/agent/v3/ssh-keys) and add your credentials to your buildkite agent as follows.
-
+Add your credentials to your buildkite agent.
 Use `ASCEND_ACCESS_KEY` for your access key id and `ASCEND_SECRET_KEY` for your secret access key.
