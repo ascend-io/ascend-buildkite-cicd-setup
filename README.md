@@ -42,5 +42,13 @@ For build steps command, you can use `buildkite-agent pipeline upload`, which wi
 ![build-steps](build_steps.png)
 
 
-Add your credentials to your buildkite agent.
+Add your credentials to your buildkite agent. In order to allow your buildkite agent to download from your git repository, you need to create your ssh keys as your buildkite-agent:
+```
+$ sudo su buildkite-agent # or whichever user your agent runs as
+$ mkdir -p ~/.ssh && cd ~/.ssh
+$ ssh-keygen -t rsa -b 4096 -C "dev+build@myorg.com"
+```
+
+Further instructions for creating or maintaining multiple ssh keys can be found here: [link](https://buildkite.com/docs/agent/v3/ssh-keys)
+
 Use `ASCEND_ACCESS_KEY` for your access key id and `ASCEND_SECRET_KEY` for your secret access key.
