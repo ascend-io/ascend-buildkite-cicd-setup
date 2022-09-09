@@ -20,7 +20,7 @@ $ pip3 install -r requirements.txt
 Obtain your access and secret keys from your Ascend environment as it is required in the next step.
 It can be found from your Profile tab:
 
-![profile](ascend_access_keys.png)
+![profile](profile.png)
 
 ```
 $ python3 init.py
@@ -36,6 +36,11 @@ $ git push
 ```
 
 Create a new pipeline: [![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
+
+For build steps command, you can use `buildkite-agent pipeline upload`, which will deploy according to `.buildkite/pipeline.yml` instructions.
+
+![build-steps](build_steps.png)
+
 
 Add your credentials to your buildkite agent.
 Use `ASCEND_ACCESS_KEY` for your access key id and `ASCEND_SECRET_KEY` for your secret access key.
