@@ -7,5 +7,5 @@ steps:
           propagate-environment: true
           environment:
             - "hostname=<<replace_env>>"
-            - ASCEND_ACCESS_KEY
-            - ASCEND_SECRET_KEY
+            - ASCEND_ACCESS_KEY_ID
+            - ASCEND_SECRET_ACCESS_KEY

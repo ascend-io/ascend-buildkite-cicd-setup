@@ -26,9 +26,7 @@ def main():
         download_dataflow(client, data_service_id=dataserv, dataflow_id=dataflow, resource_base_path='.')
         os.rename(f'{dataflow}.py', 'upload.py')
         replace('upload.py', f'client = Client("{hostname}")',
-                """client = Client(hostname=os.getenv("hostname"),
-                  access_key=os.getenv("ASCEND_ACCESS_KEY"),
-                  secret_key=os.getenv("ASCEND_SECRET_KEY"))""")
+                'client = Client(hostname=os.getenv("hostname")')
         replace('.buildkite/pipeline.yml', '<<replace_env>>', hostname)
     except:
         #TODO:  add error statements later
