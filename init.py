@@ -20,7 +20,7 @@ def main():
         dataserv = input('Enter the name of the data service: ').replace(' ', '_')
         dataflow = input('Enter the name of the data flow: ').replace(' ', '_')
         
-        client = Client(hostname=hostname, access_key=access_key, secret_key=secret_key)
+        client = Client(hostname=hostname)
         download_dataflow(client, data_service_id=dataserv, dataflow_id=dataflow, resource_base_path='.')
         os.rename(f'{dataflow}.py', 'upload.py')
         replace('upload.py', f'client = Client("{hostname}")',
