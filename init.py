@@ -37,12 +37,13 @@ def create_dataflow(
             'client = Client(os.getenv("ASCEND_HOSTNAME"))')
     replace('upload.py', f'apply_dataflow(client, "{dataserv}"',
             'apply_dataflow(client, os.getenv("ASCEND_DATA_SERVICE")')
-    replace('upload.py', f'\'{dataflow}\'', f'\'{dataflow}_prd\'')
+    replace('upload.py', f'id=\'{dataflow}\'', f'id=os.getenv("ASCEND_DATAFLOW")')
+    replace('upload.py', f'name=\'{dataflow}\'', f'name=os.getenv("ASCEND_DATAFLOW")')
 
     shutil.copy('.buildkite/pipeline.yml.template', '.buildkite/pipeline.yml')
-    replace('.buildkite/pipeline.yml', '<<replace_env_dev>>', hostname)
-    replace('.buildkite/pipeline.yml', '<<replace_data_service_dev>>', dataserv)
-    replace('.buildkite/pipeline.yml', '<<replace_dataflow_dev>>', dataflow)
+    replace('.buildkite/pipeline.yml', '<<REPLACE_ENV_DEV>>', hostname)
+    replace('.buildkite/pipeline.yml', '<<REPLACE_DATA_SERVICE_DEV>>', dataserv)
+    replace('.buildkite/pipeline.yml', '<<REPLACE_DATAFLOW_DEV>>', dataflow)
     
     print(f"renamed: {dataflow}.py to upload.py")
 

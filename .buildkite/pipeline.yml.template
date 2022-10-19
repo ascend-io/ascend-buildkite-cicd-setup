@@ -6,9 +6,9 @@ steps:
           run: app
           propagate-environment: true
           environment:
-            - "ASCEND_HOSTNAME=<<replace_env_dev>>"
-            - "ASCEND_DATA_SERVICE=<<replace_data_service_dev>>"
-            - "ASCEND_DATAFLOW=<<replace_dataflow_dev>>"
+            - "ASCEND_HOSTNAME=<<REPLACE_ENV_DEV>>"
+            - "ASCEND_DATA_SERVICE=<<REPLACE_DATA_SERVICE_DEV>>"
+            - "ASCEND_DATAFLOW=<<REPLACE_DATAFLOW_DEV>>"
             - ASCEND_ACCESS_KEY_ID
             - ASCEND_SECRET_ACCESS_KEY
   - block: ":rocket: Release!"
@@ -21,6 +21,6 @@ steps:
           environment:
             - "ASCEND_HOSTNAME=<<REPLACE_ENV_PROD>>"
             - "ASCEND_DATA_SERVICE=<<YOUR_PROD_DATA_SERVICE>>"
-            - "ASCEND_DATAFLOW=<<REPLACE_PROD_DATAFLOW>>"
+            - "ASCEND_DATAFLOW=<<YOUR_PROD_DATAFLOW>>"
             - ASCEND_ACCESS_KEY_ID
             - ASCEND_SECRET_ACCESS_KEY
