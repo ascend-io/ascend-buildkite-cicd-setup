@@ -1,0 +1,26 @@
+steps:
+  - name: ":python: :buildkite: development"
+    command: "python upload.py"
+    plugins:
+      - docker-compose#v3.7.0:
+          run: app
+          propagate-environment: true
+          environment:
+            - "ASCEND_HOSTNAME=<<replace_env_dev>>"
+            - "ASCEND_DATA_SERVICE=<<replace_data_service_dev>>"
+            - "ASCEND_DATAFLOW=<<replace_dataflow_dev>>"
+            - ASCEND_ACCESS_KEY_ID
+            - ASCEND_SECRET_ACCESS_KEY
+  - block: ":rocket: Release!"
+  - name: ":python: :buildkite: production"
+    command: "python upload.py"
+    plugins:
+      - docker-compose#v3.7.0:
+          run: app
+          propagate-environment: true
+          environment:
+            - "ASCEND_HOSTNAME=<<REPLACE_ENV_PROD>>"
+            - "ASCEND_DATA_SERVICE=<<YOUR_PROD_DATA_SERVICE>>"
+            - "ASCEND_DATAFLOW=<<REPLACE_PROD_DATAFLOW>>"
+            - ASCEND_ACCESS_KEY_ID
+            - ASCEND_SECRET_ACCESS_KEY

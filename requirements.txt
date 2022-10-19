@@ -1,1 +1,3 @@
 ascend-io-sdk
+pytest
+typer
